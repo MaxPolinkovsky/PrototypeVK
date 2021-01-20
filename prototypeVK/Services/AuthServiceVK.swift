@@ -6,62 +6,34 @@
 //
 
 import Foundation
-import VK_ios_sdk
+import SwiftyVK
 
-protocol AuthServiceVKDelegate {
-    func authServiceShouldShow(_ viewController: UIViewController)
-    func authServiceSignIn()
-    func authServiceDidSignInFail()
-}
-
-final class AuthServiceVK: NSObject, VKSdkDelegate, VKSdkUIDelegate {
+final class AuthServiceVK: SwiftyVKDelegate {
     
-    private let appID = "7733302"
-    private let vkSdk: VKSdk
+    let scopes: Scopes = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
     
-    var delegate: AuthServiceVKDelegate?
     
-    override init() {
-        vkSdk = VKSdk.initialize(withAppId: appID)
-        super.init()
-        print("VKSdk.initialize")
-//        MARK: - Subscription VKProtocols
-        vkSdk.register(self)
-        vkSdk.uiDelegate = self
+    init() {
+        VK.setUp(appId: appID, delegate: self)
     }
     
-    func wakeUpSession() {
-        let scope = ["offline"]//список прав доступа
-        
-        //извлекаем токен из хранилища и проверяем разрешения на использование токена пользователем
-        VKSdk.wakeUpSession(scope) { (state, error) in
-            if state == VKAuthorizationState.authorized {
-                self.delegate?.authServiceSignIn()
-                print("VKAuthorizationState.authorized")
-            } else if state == VKAuthorizationState.initialized {
-                print("VKAuthorizationState.initialized")
-                VKSdk.authorize(scope)
-            } else {
-                print("error: \(String(describing: error)), state: \(state)")
-                self.delegate?.authServiceDidSignInFail()
-            }
-        }
+    func vkNeedsScopes(for sessionId: String) -> Scopes {
+        return scopes
     }
     
-    //    MARK: - VKSDK Delegate
-    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        self.delegate?.authServiceSignIn()
-    }
-    
-    func vkSdkUserAuthorizationFailed() {
+    func vkNeedToPresent(viewController: VKViewController) {
         print(#function)
     }
-    //    MARK: - VKSDK UIDelegate
-    func vkSdkShouldPresent(_ controller: UIViewController!) { //авторизационная страница в VK
-        self.delegate?.authServiceShouldShow(controller)
+    
+    func vkTokenCreated(for sessionId: String, info: [String : String]) {
+        print("token created in session \(sessionId) with info \(info)")
     }
     
-    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
-        print(#function)
+    func vkTokenUpdated(for sessionId: String, info: [String : String]) {
+        print("token updated in session \(sessionId) with info \(info)")
+    }
+    
+    func vkTokenRemoved(for sessionId: String) {
+        print("token removed in session \(sessionId)")
     }
 }

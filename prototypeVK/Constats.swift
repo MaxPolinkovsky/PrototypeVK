@@ -8,6 +8,7 @@
 import UIKit
 
 let reuseIdentifier = "Cell"
+let appID = "7733302"
 let defaults = UserDefaults.standard
 
 extension UIColor {
