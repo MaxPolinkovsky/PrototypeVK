@@ -25,27 +25,28 @@ class LoginVC: UIViewController {
         authInFirebase = AuthServiceFirebase()
         
         setupUI()
-        emailTF.text = ""
-        passTF.text = ""
+        
     }
     
     fileprivate func setupUI() {
-        registerButton.clipsToBounds = true
-        registerButton.layer.cornerRadius = 12
-        registerButton.backgroundColor = .azure
-        vKLoginButton.clipsToBounds = true
-        vKLoginButton.layer.cornerRadius = 12
-        vKLoginButton.backgroundColor = .azure
+        emailTF?.text = ""
+        passTF?.text = ""
+        registerButton?.clipsToBounds = true
+        registerButton?.layer.cornerRadius = 12
+        registerButton?.backgroundColor = .azure
+        vKLoginButton?.clipsToBounds = true
+        vKLoginButton?.layer.cornerRadius = 12
+        vKLoginButton?.backgroundColor = .azure
     }
 
     @IBAction func registerFBUser(_ sender: UIButton) {
         guard let email = emailTF.text, let pass = passTF.text else {return}
         authInFirebase.signInFirebase(email: email, password: pass)
     }
-//    MARK: --Почему нельзя так привязаться для передачи по ключу? SceneDelegate, 63 строка
-    @IBAction func vKAuthClick(_ sender: UIButton) {
-        guard let _ = defaults.object(forKey: "vkSign") as? String else { return }
-        authInVK.wakeUpSession()
+    
+    @IBAction func registerVK(_ sender: UIButton) {
+        performSegue(withIdentifier: "toUserProfile", sender: nil)
+        authInVK.wakeUpSession()    
     }
  
     /*

@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceVKDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-            VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
+        VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         }
     }
     
@@ -61,10 +61,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceVKDelegate {
 
     //    MARK: Protocol AuthServiceVKDelegate
     func authServiceShouldShow(_ viewController: UIViewController) {
-        if let _ = defaults.object(forKey: "vkSign") {
+       
             mainVC = LoginVC()
             mainVC.present(viewController, animated: true)
-        }
         print(#function)
     }
     

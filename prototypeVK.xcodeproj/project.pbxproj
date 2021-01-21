@@ -21,6 +21,8 @@
 		844F03C325B6C15200E25AC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844F03C225B6C15200E25AC2 /* GoogleService-Info.plist */; };
 		844F03CC25B6C77000E25AC2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 844F03CB25B6C77000E25AC2 /* FirebaseAuth */; };
 		844F03D125B6C92100E25AC2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F03D025B6C92100E25AC2 /* LoginVC.swift */; };
+		845469C825B9B8FD006FC8D1 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845469C725B9B8FC006FC8D1 /* UserProfileVC.swift */; };
+		845469CF25B9CC16006FC8D1 /* PhotoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845469CE25B9CC16006FC8D1 /* PhotoPageVC.swift */; };
 		84D53B1D25B6346600461FA9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D53B1C25B6346600461FA9 /* Manager.swift */; };
 		84D53B2025B6355000461FA9 /* Constats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D53B1F25B6355000461FA9 /* Constats.swift */; };
 		AF1A7C3DCF062533C17AC5B5 /* Pods_prototypeVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E33F85B3865E90F403E274 /* Pods_prototypeVK.framework */; };
@@ -43,6 +45,8 @@
 		8447A25C25B731B7005199BD /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		844F03C225B6C15200E25AC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844F03D025B6C92100E25AC2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		845469C725B9B8FC006FC8D1 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		845469CE25B9CC16006FC8D1 /* PhotoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageVC.swift; sourceTree = "<group>"; };
 		84D53B1C25B6346600461FA9 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		84D53B1F25B6355000461FA9 /* Constats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constats.swift; sourceTree = "<group>"; };
 		A3C563EFCD9EA74C577CC767 /* Pods-prototypeVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prototypeVK.debug.xcconfig"; path = "Target Support Files/Pods-prototypeVK/Pods-prototypeVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +89,8 @@
 			children = (
 				84D53B1F25B6355000461FA9 /* Constats.swift */,
 				84D53B1C25B6346600461FA9 /* Manager.swift */,
-				8447A25625B70F0D005199BD /* Services */,
 				84D53B2725B635F100461FA9 /* App */,
+				8447A25625B70F0D005199BD /* Services */,
 				84D53B2225B635D800461FA9 /* Views */,
 				84D53B2425B635E400461FA9 /* Models */,
 				8127C6F52531D8A700B4C153 /* Main.storyboard */,
@@ -124,12 +128,30 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		845469CB25B9CB61006FC8D1 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				845469C725B9B8FC006FC8D1 /* UserProfileVC.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		845469D225B9CC20006FC8D1 /* PhotoPage */ = {
+			isa = PBXGroup;
+			children = (
+				845469CE25B9CC16006FC8D1 /* PhotoPageVC.swift */,
+			);
+			path = PhotoPage;
+			sourceTree = "<group>";
+		};
 		84D53B2225B635D800461FA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8447A25C25B731B7005199BD /* AlertVC.swift */,
 				844F03CE25B6C8FB00E25AC2 /* Intro */,
 				8447A24E25B70C01005199BD /* Login */,
-				8447A25C25B731B7005199BD /* AlertVC.swift */,
+				845469CB25B9CB61006FC8D1 /* UserProfile */,
+				845469D225B9CC20006FC8D1 /* PhotoPage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,10 +318,12 @@
 				8447A25425B70EED005199BD /* AuthServiceVK.swift in Sources */,
 				8127C7052531E57D00B4C153 /* PageSwipeController.swift in Sources */,
 				8127C6F02531D8A700B4C153 /* AppDelegate.swift in Sources */,
+				845469CF25B9CC16006FC8D1 /* PhotoPageVC.swift in Sources */,
 				8447A25D25B731B7005199BD /* AlertVC.swift in Sources */,
 				84D53B2025B6355000461FA9 /* Constats.swift in Sources */,
 				8127C70B2531F3D000B4C153 /* PageModel.swift in Sources */,
 				8127C6F22531D8A700B4C153 /* SceneDelegate.swift in Sources */,
+				845469C825B9B8FD006FC8D1 /* UserProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

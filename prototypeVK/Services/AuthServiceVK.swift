@@ -15,8 +15,7 @@ protocol AuthServiceVKDelegate {
 }
 
 final class AuthServiceVK: NSObject, VKSdkDelegate, VKSdkUIDelegate {
-    
-    private let appID = "7733302"
+
     private let vkSdk: VKSdk
     
     var delegate: AuthServiceVKDelegate?

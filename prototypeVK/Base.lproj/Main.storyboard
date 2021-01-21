@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -80,7 +80,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="vKAuthClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KoS-K5-KBj"/>
+                                            <action selector="registerVK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KoS-K5-KBj"/>
+                                            <segue destination="PIP-K8-Q62" kind="presentation" identifier="toUserProfile" modalPresentationStyle="fullScreen" id="4Rj-Me-f9k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,7 +109,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165.21739130434784" y="59.598214285714285"/>
+            <point key="canvasLocation" x="-209" y="52"/>
+        </scene>
+        <!--UserProfileVC-->
+        <scene sceneID="D7U-m2-U5m">
+            <objects>
+                <viewController title="UserProfileVC" id="PIP-K8-Q62" customClass="UserProfileVC" customModule="prototypeVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="06w-z7-wKb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlf-sM-LtP">
+                                <rect key="frame" x="104.5" y="244" width="205" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dlf-sM-LtP" secondAttribute="height" multiplier="95:26" id="NT3-Ja-x8y"/>
+                                    <constraint firstAttribute="height" constant="56" id="k9e-8C-lJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZjC-je-A1D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dlf-sM-LtP" firstAttribute="top" secondItem="ZjC-je-A1D" secondAttribute="top" constant="200" id="1WR-nk-SC0"/>
+                            <constraint firstItem="dlf-sM-LtP" firstAttribute="centerX" secondItem="06w-z7-wKb" secondAttribute="centerX" id="NHN-zk-vss"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1kb-Nj-TGn"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="dlf-sM-LtP" id="0If-qj-GZo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pI-T1-g2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="52"/>
         </scene>
     </scenes>
     <resources>
