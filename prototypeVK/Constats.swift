@@ -7,7 +7,7 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+let cellID = "cell"
 let clientID = "d085134cf36647f1ba3df971f6f2f631"
 let redirectURI = URL(string:"mySporify://returnAfterLogin")!
 let defaults = UserDefaults.standard
