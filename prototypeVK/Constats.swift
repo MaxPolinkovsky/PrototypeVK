@@ -8,7 +8,8 @@
 import UIKit
 
 let reuseIdentifier = "Cell"
-let appID = "7733302"
+let clientID = "d085134cf36647f1ba3df971f6f2f631"
+let redirectURI = URL(string:"mySporify://returnAfterLogin")!
 let defaults = UserDefaults.standard
 
 extension UIColor {

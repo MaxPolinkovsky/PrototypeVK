@@ -31,7 +31,7 @@ class UserProfileVC: UIViewController {
         iconViewConfigurate()
     }
     
-    //     MARK: ImagePicker sourcetype
+    // MARK: ImagePicker sourcetype
     private func addUsersPhoto() {
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
@@ -39,7 +39,6 @@ class UserProfileVC: UIViewController {
     }
     
     // MARK: - User methods
-    
     private func iconViewConfigurate() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(iconTap))
         iconImageView.addGestureRecognizer(tapGesture)
