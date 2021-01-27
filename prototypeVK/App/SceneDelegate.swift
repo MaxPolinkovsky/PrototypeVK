@@ -61,9 +61,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceVKDelegate {
 
     //    MARK: Protocol AuthServiceVKDelegate
     func authServiceShouldShow(_ viewController: UIViewController) {
-       
-            mainVC = LoginVC()
-            mainVC.present(viewController, animated: true)
+//       
+//            mainVC = LoginVC()
+//            mainVC.present(viewController, animated: true)
         print(#function)
     }
     
