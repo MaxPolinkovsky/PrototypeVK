@@ -8,8 +8,9 @@
 import UIKit
 
 let cellID = "cell"
-let clientID = "d085134cf36647f1ba3df971f6f2f631"
-let redirectURI = URL(string:"mySporify://returnAfterLogin")!
+let SpotifyClientID = "d085134cf36647f1ba3df971f6f2f631"
+//let redirectURI = URL(string:"mySporify://returnAfterLogin")!
+let SpotifyRedirectURL = URL(string:"mySporify://")!
 let defaults = UserDefaults.standard
 
 extension UIColor {
