@@ -1,6 +1,6 @@
 //
 //  Constats.swift
-//  prototypeVK
+//  Sporify
 //
 //  Created by Max Polinkovsky on 18.01.21.
 //
